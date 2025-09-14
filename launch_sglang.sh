@@ -1,7 +1,7 @@
 cd /root/ds-3.1
 
 uv run -m sglang.launch_server \
-    --model-path "/data1/DeepSeek-V3.1" \
+    --model-path deepseek-ai/DeepSeek-V3.1 \
     --host 0.0.0.0 --port 30000 \
     --tp 8 \
     --context-length 131072 \
