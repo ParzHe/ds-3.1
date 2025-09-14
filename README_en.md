@@ -1,30 +1,30 @@
-# DeepSeek V3.1 H20 单机部署和使用
+# DeepSeek V3.1 H20 Deployment and Usage on a Single Node
 
-中文 | [English](README_en.md)
+[中文](README.md) | English
 
-## 环境准备
+## Environment Preparation
 
-- 硬件要求： H20 / H200 单机 (8卡) 或以上
+- Hardware requirements: H20 / H200 single node (8 cards) or above
 
-- 确保安装 [uv](https://docs.astral.sh/uv/guides/install-python/). 安装成功后执行：
+- Make sure to install [uv](https://docs.astral.sh/uv/guides/install-python/). After successful installation, run:
 
     ```bash
     cd ds-3.1
     uv sync
     ```
 
-## 启动服务
+## Starting the Service
 
-- 服务启动脚本: [launch_sglang.sh](launch_sglang.sh)
+- Service startup script: [launch_sglang.sh](launch_sglang.sh)
 
     ```bash
     cd /root/ds-3.1
     bash launch_sglang.sh
     ```
 
-## API 使用示例
+## API Usage Examples
 
-- 非思考模式使用示例: [non_thinking.py](usage_examples/non_thinking.py)
+- Non-thinking mode usage example: [non_thinking.py](usage_examples/non_thinking.py)
     ```python
     import openai
     client = openai.Client(
@@ -43,8 +43,8 @@
     )
     print(response.choices[0].message.content)
     ```
-    
-- 思考模式使用示例: [thinking.py](usage_examples/thinking.py)
+
+- Thinking mode usage example: [thinking.py](usage_examples/thinking.py)
     ```python
     import openai
     client = openai.Client(
@@ -64,9 +64,9 @@
     print(response)
     ```
 
-## 吞吐量测试
+## Throughput Testing
 
-- 吞吐量测试脚本: [throughput_test.sh](throughput_test.sh) 
+- Throughput testing script: [throughput_test.sh](throughput_test.sh)
     ```bash
     cd /root/ds-3.1
     bash throughput_test.sh
